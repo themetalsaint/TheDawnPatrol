@@ -1,6 +1,6 @@
 
 //add NC to userInput
-var userInput = 'Carolina Beach' //'get the input from html form'
+var userInput = 'Wrightsville Beach' //'get the input from html form'
 var beachName = userInput + ' NC' //userInput + ' NC'
 
 //Using positionStackApi, fetch data by beach-name, and get latitude, and longitude of the beach 
@@ -48,6 +48,10 @@ function displayWeather(weatherData){
     var iconEl = $('<img>')
     iconEl.attr('src',`http://openweathermap.org/img/wn/${weatherData.current.weather[0].icon}@2x.png`)
     iconEl.addClass('current-img text-style')
+
+    var descriptionEl = $('<p>')
+    descriptionEl.addClass('text-style capital')
+    descriptionEl.text(weatherData.current.weather[0].description)
     
     var tempEl = $('<p>')
     tempEl.addClass('text-style')
@@ -65,7 +69,7 @@ function displayWeather(weatherData){
     uvEl.addClass('text-style')
     uvEl.text(`UV Index: (${weatherData.current.uvi})`)
 
-    weatherCardEl.append( beachEl, iconEl, currentEl, tempEl, windEl, humidityEl, uvEl)
+    weatherCardEl.append( beachEl, iconEl, currentEl, descriptionEl, tempEl, windEl, humidityEl, uvEl)
 
 }
 
