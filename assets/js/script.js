@@ -1,29 +1,31 @@
 
 //add NC to userInput
-var userInput = 'Wrightsville Beach' //'get the input from html form'
-var beachName = userInput + ' NC' //userInput + ' NC'
+var beachName = 'Carolina Beach'
+//invode function
+getCoordinates(beachName)
 
-//Using positionStackApi, fetch data by beach-name, and get latitude, and longitude of the beach 
-function getData(){
-    var psApiKey = '8e190ed679ba752690fd2008444f7cd2'
-    var positionStackApi = `https://api.positionstack.com/v1/forward?access_key=${psApiKey}&query=${beachName}&country=US`
-    fetch(positionStackApi)
-    .then(function(response){
-        response.json()
-        .then(function(beach){
-            var lat = beach.data[0].latitude
-            var long = beach.data[0].longitude
-            getForecastWeather(lat,long)
-        })
-    })   
+function getCoordinates(beachInput){
+    var beach = {
+        name: ['Wrightsville Beach', 'Carolina Beach'],
+        lat:['34.213810', '34.035172'],
+        lon:['-77.805527', '-77.893600']
+    }
+    for(var i = 0; i < beach.name.length; i++){
+        if(beachInput == beach.name[i]){
+            var lat = beach.lat[i]
+            var lon = beach.lon[i]
+            console.log(beach.lat[i])
+            getForecastWeather(lat,lon)
+        }
+    }
+
 
 }
 
-
 //By using OpenWeatherApi, accept lat,long to retrieve current weather information
-function getForecastWeather(lat,long){
+function getForecastWeather(lat,lon){
     var forecastKey = 'a2b4c3401daabb98bf05eae4890ac57c'
-    var forecastWeatherUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&units=imperial&exclude=hourly,minutely,alerts&appid=${forecastKey}`
+    var forecastWeatherUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=hourly,minutely,alerts&appid=${forecastKey}`
     fetch(forecastWeatherUrl)
         .then(function(response){
             response.json().then(function(weather){
@@ -39,14 +41,14 @@ function displayWeather(weatherData){
 
     var beachEl = $('<h3>')
     beachEl.addClass('text-style beach-name')
-    beachEl.text(userInput)
+    beachEl.text(beachName)
 
     var currentEl = $('<h3>')
     currentEl.addClass('text-style')
     currentEl.text('Now')
 
     var iconEl = $('<img>')
-    iconEl.attr('src',`https://openweathermap.org/img/wn/${weatherData.current.weather[0].icon}@2x.png`)
+    iconEl.attr('src',`http://openweathermap.org/img/wn/${weatherData.current.weather[0].icon}@2x.png`)
     iconEl.addClass('current-img text-style')
 
     var descriptionEl = $('<p>')
@@ -72,6 +74,3 @@ function displayWeather(weatherData){
     weatherCardEl.append( beachEl, iconEl, currentEl, descriptionEl, tempEl, windEl, humidityEl, uvEl)
 
 }
-
-//invoke function
-getData()
