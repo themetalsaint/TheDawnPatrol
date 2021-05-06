@@ -24,20 +24,37 @@ img{
   }
   .main-display{
     width: 100%;
-    height: 50vh;
+    height: 400px;
     margin-bottom:15px;
     background-color: aqua;
 
 }
   .card{
       width: 400px;
-      height: 50vh;
+      height: 400px;
       background-color: aqua;
       margin-right: 15px;
       margin-bottom:15px;
       
+     
+      
   }
   
+  
   .text-style{
-      margin-left: 12px;
+      margin-left: 20%;
+  }
+  .current-img{
+    position: relative;
+    top: 60px;
+    left: 50px;
+    width: 50px;
+    height: 50px;
+    
+  }
+  .beach-name{
+      position: relative;
+      top: 50px;
+      font-size: 24px;
+      
   }
