@@ -1,7 +1,7 @@
 // https://api.surfline.com/v1/forecasts/5842041f4e65fad6a7708a65?
 // 'https://services.surfline.com/kbyg/spots/forecasts/wave?spotid=5842041f4e65fad6a7708a65'
 
-var beaches = ['5842041f4e65fad6a7708a65']
+var beaches = ['5842041f4e65fad6a7708a65', '5842041f4e65fad6a7708a58', '5842041f4e65fad6a7708a49']
 var responseAPI;
 
 
