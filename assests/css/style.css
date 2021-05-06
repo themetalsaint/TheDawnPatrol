@@ -31,7 +31,7 @@ img{
 }
   .card{
       width: 400px;
-      height: 400px;
+      height: 500px;
       background-color: aqua;
       margin-right: 15px;
       margin-bottom:15px;
@@ -39,17 +39,24 @@ img{
      
       
   }
-  
-  
+  .capital{
+    text-transform: capitalize;
+    position: relative;
+    bottom: 10px;
+    left: 80px;
+    font-family:cursive;
+      
+
+  }
   .text-style{
       margin-left: 20%;
   }
   .current-img{
     position: relative;
-    top: 60px;
-    left: 50px;
-    width: 50px;
-    height: 50px;
+    top: 80px;
+    left: 30px;
+    width: 60px;
+    height: 60px;
     
   }
   .beach-name{
