@@ -6,7 +6,7 @@ var beachName = userInput + ' NC' //userInput + ' NC'
 //Using positionStackApi, fetch data by beach-name, and get latitude, and longitude of the beach 
 function getData(){
     var psApiKey = '8e190ed679ba752690fd2008444f7cd2'
-    var positionStackApi = `http://api.positionstack.com/v1/forward?access_key=${psApiKey}&query=${beachName}&country=US`
+    var positionStackApi = `https://api.positionstack.com/v1/forward?access_key=${psApiKey}&query=${beachName}&country=US`
     fetch(positionStackApi)
     .then(function(response){
         response.json()
@@ -46,7 +46,7 @@ function displayWeather(weatherData){
     currentEl.text('Now')
 
     var iconEl = $('<img>')
-    iconEl.attr('src',`http://openweathermap.org/img/wn/${weatherData.current.weather[0].icon}@2x.png`)
+    iconEl.attr('src',`https://openweathermap.org/img/wn/${weatherData.current.weather[0].icon}@2x.png`)
     iconEl.addClass('current-img text-style')
 
     var descriptionEl = $('<p>')
