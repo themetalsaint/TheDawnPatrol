@@ -4,6 +4,8 @@
 var beaches = ['5842041f4e65fad6a7708a65', '5842041f4e65fad6a7708a58', '5842041f4e65fad6a7708a49']
 var responseAPI;
 
+var timeboxesHigh = [0,0,0,0,0,0,0,0]
+var timeboxesLow = [0,0,0,0,0,0,0,0]
 
 surfCall();
 
@@ -29,7 +31,8 @@ function printData() {
     var s = new Date(responseAPI.data.forecasts[i].timestamp *1000); 
     console.log(s.toLocaleDateString())
     console.log(s.toTimeString())
-    
+    timeboxesHigh[i] = responseAPI.data.forecasts[i].surf.max
+    timeboxesLow[i] = responseAPI.data.forecasts[i].surf.min
   }
 
 }
