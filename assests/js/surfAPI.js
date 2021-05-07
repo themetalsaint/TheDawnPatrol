@@ -42,8 +42,8 @@ function printData() {
 
 function updateWaveHeights() {
   for (i=0; i < 9 ; i++) {
-    waveHeightsList.children[0].children[i].style.height = timeboxesHigh[i] * 20 + 'px'
-    waveHeightsList.children[1].children[i].style.height = timeboxesLow[i] * 20 + 'px'
+    waveHeightsList.children[0].children[i].style.height = timeboxesHigh[i] * 30 + 'px'
+    waveHeightsList.children[1].children[i].style.height = timeboxesLow[i] * 30 + 'px'
   }
 }
 
