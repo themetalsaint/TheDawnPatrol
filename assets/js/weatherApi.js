@@ -1,20 +1,39 @@
 
-//add NC to userInput
-var beachName = 'Carolina Beach'
-//invode function
+var beach = {
+    name: ['Wrightsville Beach', 'Surf City Pier', 'Carolina Beach'],
+    lat:['34.213810', '34.42514', '34.035172'],
+    lon:['-77.805527', '-77.54562', '-77.893600']
+}
+var beachName = 'Wrightsville Beach'; 
+var dropDownEl = $('#dropdown')
+
+//default dipaly
 getCoordinates(beachName)
 
-function getCoordinates(beachInput){
-    var beach = {
-        name: ['Wrightsville Beach', 'Carolina Beach'],
-        lat:['34.213810', '34.035172'],
-        lon:['-77.805527', '-77.893600']
+dropDownEl.change('select', function(event){
+    $('.weather-forecast').text('')
+    event.preventDefault()
+    var select = $(this).val()
+    console.log(select)
+    var dropDown = $('#dropdown')[0]
+    for(var i = 0; i<dropDown.length; i++){
+        if(select){
+            beachName = beach.name[select]
+            // console.log(beach.name[select])
+            
+        }    
     }
+    getCoordinates(beachName)
+    
+})
+
+function getCoordinates(beachInput){
+    
     for(var i = 0; i < beach.name.length; i++){
         if(beachInput == beach.name[i]){
             var lat = beach.lat[i]
             var lon = beach.lon[i]
-            console.log(beach.lat[i])
+            // console.log(beach.lat[i])
             getForecastWeather(lat,lon)
         }
     }
@@ -29,7 +48,7 @@ function getForecastWeather(lat,lon){
     fetch(forecastWeatherUrl)
         .then(function(response){
             response.json().then(function(weather){
-            console.log(weather)
+            // console.log(weather)
             displayWeather(weather)
         })
     })
@@ -37,8 +56,8 @@ function getForecastWeather(lat,lon){
 
 //display the current weather info to the page
 function displayWeather(weatherData){
+    
     var weatherCardEl = $('.weather-forecast')
-
     var beachEl = $('<h3>')
     beachEl.addClass('text-style beach-name')
     beachEl.text(beachName)

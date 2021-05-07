@@ -65,3 +65,50 @@ img{
       font-size: 24px;
       
   }
+
+  #waveHeightDisplay {
+    border: 1px solid black;
+    width: 900px;
+    height: 300px;
+    position: absolute;
+    left: 50%;
+    margin-left: -450px;
+  }
+
+  .timeblock {
+    width: 100px;
+    height: 100px;
+    border: 1px solid red;
+    position: absolute;
+    bottom: 0;
+  }
+
+  /* #midnightHigh, #midnightLow {
+    
+  } */
+
+#a3amHigh, #a3amLow {
+  left: 100px;
+}
+
+#a6amHigh, #a6amLow {
+  left: 200px;
+}
+#a9amHigh, #a9amLow {
+  left: 300px;
+}
+#a12pmLow, #a12pmHigh {
+  left: 400px;
+}
+#a3pmHigh, #a3pmLow {
+  left: 500px;
+}
+#a6pmHigh, #a6pmLow {
+  left: 600px;
+}
+#a9pmHigh, #a9pmLow {
+  left: 700px;
+}
+#a12amHigh, #a12amLow {
+  left: 800px;
+}

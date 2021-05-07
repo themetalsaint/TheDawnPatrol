@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assests/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>TheDawnPatrol</title>
 </head>
 <body>
     <header>
         <div class='container'>
-            <img src="./assests/images/headerImage.jpg" alt="waves">
+            <img src="./assets/images/headerImage.jpg" alt="waves">
             <h1 class="centered">The Dawn Patrol</h1>
         </div>
     </header>
@@ -20,6 +20,38 @@
         <!-- this idv is for displaying dropdown, graph, etc..-->
         <div class='main-display'>
             <h3>Dropdown and other stuffs go here</h3>
+            <section id='dropdownBox'>
+                <select name="dropdown" id="dropdown">
+                    <option value="">Select beach</option>
+                    <option v='0' value="0">C-Street, Wrightsville Beach</option>
+                    <option v='0' value="1">Surf City Pier</option>
+                    <option v='0' value="2">Carolina Beach Pier</option>
+                </select>
+            </section>
+            <section id = 'waveHeightDisplay'>
+                <section id = 'highHeights'>
+                    <div id = 'midnightHigh' class = 'timeblock'></div>
+                    <div id = 'a3amHigh' class = 'timeblock'></div>
+                    <div id = 'a6amHigh' class = 'timeblock'></div>
+                    <div id = 'a9amHigh' class = 'timeblock'></div>
+                    <div id = 'a12pmHigh' class = 'timeblock'></div>
+                    <div id = 'a3pmHigh' class = 'timeblock'></div>
+                    <div id = 'a6pmHigh' class = 'timeblock'></div>
+                    <div id = 'a9pmHigh' class = 'timeblock'></div>
+                    <div id = 'a12amHigh' class = 'timeblock'></div>
+                </section>
+                <section id = 'lowHeights'>
+                    <div id = 'midnightLow' class = 'timeblock'></div>
+                    <div id = 'a3amLow' class = 'timeblock'></div>
+                    <div id = 'a6amLow' class = 'timeblock'></div>
+                    <div id = 'a9amLow' class = 'timeblock'></div>
+                    <div id = 'a12pmLow' class = 'timeblock'></div>
+                    <div id = 'a3pmLow' class = 'timeblock'></div>
+                    <div id = 'a6pmLow' class = 'timeblock'></div>
+                    <div id = 'a9pmLow' class = 'timeblock'></div>
+                    <div id = 'a12amLow' class = 'timeblock'></div>               
+                </section>
+            </section>
 
         </div>
 
@@ -42,6 +74,7 @@
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="./assests/js/script.js"></script>
+    <script src="./assets/js/weatherApi.js"></script>
+    <script src="./assets/js/surfAPI.js"></script>
 </body>
 </html>
