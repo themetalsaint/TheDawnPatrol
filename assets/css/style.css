@@ -76,6 +76,7 @@ img{
     position: absolute;
     left: 50%;
     margin-left: -450px;
+
     
   }
  
@@ -127,4 +128,10 @@ img{
 }
 #a12amHigh, #a12amLow {
   left: 800px;
+}
+
+#dropdown {
+  position: absolute;
+  margin: 20px;
+  top: 40px;
 }
