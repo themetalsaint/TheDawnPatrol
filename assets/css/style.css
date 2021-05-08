@@ -176,4 +176,19 @@ nav{
   background-color: rgb(115, 188, 213);
 }
 
+#heightsList .height {
+  /* position: absolute */
+  border-top: 3px solid black;
+  height: 60px;
+  width: 15px;
+  margin-left: -15px;
+}
 
+#heightsList .height p {
+  position: relative;
+  left: -20px;
+  top: -30px;
+  margin-left: -20px;
+  overflow: visible;
+  text-align: right;
+}
