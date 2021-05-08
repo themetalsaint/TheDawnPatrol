@@ -9,24 +9,30 @@
     <title>TheDawnPatrol</title>
 </head>
 <body>
+    <div class='navbar-fixed'>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo">Dawn Patrol</a>
+                <ul class="right">
+                    <li><a id = 'dropdown1' class='dropdown-trigger btn waves-effect waves-teal' href='#' data-target='dropdown'>Select a Beach</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <ul id='dropdown' class='dropdown-content'>
+        <li><a id='wrightsville' href="#!">Wrightsville Beach</a></li>
+        <li><a id='carolina' href="#!">Carolina Beach</a></li>
+        <li><a id='surfcity' href="#!">Surf City</a></li>
+    </ul>
     <header>
-        <div class='container'>
             <img src="./assets/images/headerImage.jpg" alt="waves">
-            <h1 class="centered">The Dawn Patrol</h1>
-        </div>
     </header>
 
     <main class='div-container'>
         
         <!-- this idv is for displaying dropdown, graph, etc..-->
+        
         <h3>Dropdown and other stuffs go here</h3>
-        <a id = 'dropdown1' class='dropdown-trigger btn' href='#' data-target='dropdown'>Select a Beach</a>
-            <!-- Dropdown Structure -->
-            <ul id='dropdown' class='dropdown-content'>
-                <li><a id='wrightsville' href="#!">Wrightsville Beach</a></li>
-                <li><a id='carolina' href="#!">Carolina Beach</a></li>
-                <li><a id='surfcity' href="#!">Surf City</a></li>
-            </ul>
         <div class='main-display'>
 
             <!-- <section id='dropdownBox'>
@@ -37,8 +43,6 @@
                     <option value="2">Carolina Beach Pier</option>
                 </select>
             </section> -->
-            
-            
 
             <section id = 'waveHeightDisplay'>
                 <section id = 'highHeights'>
