@@ -87,14 +87,14 @@ img{
     position: absolute;
     left: 50%;
     margin-left: -400px;
-
+    background-color: lightblue;
     
   }
  
   .timeblock {
     width: 100px;
     height: 100px;
-    border: 1px solid red;
+    border: 1px solid blue;
     position: absolute;
     bottom: 0;
   }
@@ -165,3 +165,12 @@ img{
   margin-left: -15px;
   margin-bottom: -25px;
 }
+
+#highHeights .timeblock {
+  background-color: rgb(157, 155, 242);
+}
+
+#lowHeights .timeblock {
+  background-color: rgb(115, 188, 213);
+}
+
