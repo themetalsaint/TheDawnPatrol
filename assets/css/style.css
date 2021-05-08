@@ -69,6 +69,13 @@ img{
       
   }
 
+  .surfer{
+    width: 120px;
+    height: 180px;
+    
+  }
+
+
   #waveHeightDisplay {
     border: 1px solid black;
     width: 900px;
