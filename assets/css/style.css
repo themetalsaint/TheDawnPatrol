@@ -143,13 +143,15 @@ img{
 
 #dropdown1 {
   position: relative;
-  float: left;
-  margin: 20px;
-  top: 40px;
 }
 
 .surfModal {
   margin-bottom: 10px;
+}
+
+
+nav{
+  background-color: lightseagreen;
 }
 
 #times .timeblock2 {
@@ -173,4 +175,5 @@ img{
 #lowHeights .timeblock {
   background-color: rgb(115, 188, 213);
 }
+
 
