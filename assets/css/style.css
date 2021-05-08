@@ -130,8 +130,13 @@ img{
   left: 800px;
 }
 
-#dropdown {
-  position: absolute;
+#dropdown1 {
+  position: relative;
+  float: left;
   margin: 20px;
   top: 40px;
+}
+
+.surfModal {
+  margin-bottom: 10px;
 }
