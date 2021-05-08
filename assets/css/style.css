@@ -1,0 +1,114 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+img{
+    width: 100%;
+    height: 25vh;
+}
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .div-container{
+      display: flex;
+      flex-wrap: wrap;
+  }
+  .main-display{
+    width: 100%;
+    height: 400px;
+    margin-bottom:15px;
+    background-color: aqua;
+
+}
+  .card{
+      width: 400px;
+      height: 500px;
+      background-color: aqua;
+      margin-right: 15px;
+      margin-bottom:15px;
+      
+     
+      
+  }
+  .capital{
+    text-transform: capitalize;
+    position: relative;
+    bottom: 10px;
+    left: 80px;
+    font-family:cursive;
+      
+
+  }
+  .text-style{
+      margin-left: 20%;
+  }
+  .current-img{
+    position: relative;
+    top: 80px;
+    left: 30px;
+    width: 60px;
+    height: 60px;
+    
+  }
+  .beach-name{
+      position: relative;
+      top: 50px;
+      font-size: 24px;
+      
+  }
+
+  #waveHeightDisplay {
+    border: 1px solid black;
+    width: 900px;
+    height: 300px;
+    position: absolute;
+    left: 50%;
+    margin-left: -450px;
+  }
+
+  .timeblock {
+    width: 100px;
+    height: 100px;
+    border: 1px solid red;
+    position: absolute;
+    bottom: 0;
+  }
+
+  /* #midnightHigh, #midnightLow {
+    
+  } */
+
+#a3amHigh, #a3amLow {
+  left: 100px;
+}
+
+#a6amHigh, #a6amLow {
+  left: 200px;
+}
+#a9amHigh, #a9amLow {
+  left: 300px;
+}
+#a12pmLow, #a12pmHigh {
+  left: 400px;
+}
+#a3pmHigh, #a3pmLow {
+  left: 500px;
+}
+#a6pmHigh, #a6pmLow {
+  left: 600px;
+}
+#a9pmHigh, #a9pmLow {
+  left: 700px;
+}
+#a12amHigh, #a12amLow {
+  left: 800px;
+}
