@@ -72,8 +72,12 @@ img{
   .surfer{
     width: 120px;
     height: 180px;
-    
-  }
+    margin-top: 115px;
+    opacity: 75%;
+    position: absolute;
+    bottom: 0px;
+    left: 400px;
+}
 
 
   #waveHeightDisplay {
