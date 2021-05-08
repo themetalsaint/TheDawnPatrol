@@ -70,13 +70,13 @@ img{
   }
 
   .surfer{
-    width: 120px;
+    width: 100px;
     height: 180px;
     margin-top: 115px;
     opacity: 75%;
     position: absolute;
     bottom: 0px;
-    left: 400px;
+    /* left: 400px; */
 }
 
 
