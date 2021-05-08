@@ -23,10 +23,13 @@ img{
       flex-wrap: wrap;
   }
   .main-display{
+    display: flex;
+    flex-wrap: nowrap;
     width: 100%;
     height: 400px;
     margin-bottom:15px;
     background-color: aqua;
+    padding:15px;
 
 }
   .card{
@@ -73,8 +76,9 @@ img{
     position: absolute;
     left: 50%;
     margin-left: -450px;
+    
   }
-
+ 
   .timeblock {
     width: 100px;
     height: 100px;
@@ -83,6 +87,18 @@ img{
     bottom: 0;
   }
 
+  select{
+    padding: 8px;
+    border-radius: 5px;
+    
+  }
+  .dropdown-div{
+    width: 300px;
+    height: 95%;
+    background-color: cornflowerblue;
+    padding: 12px;
+  }
+  
   /* #midnightHigh, #midnightLow {
     
   } */
