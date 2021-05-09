@@ -4,31 +4,30 @@ var beach = {
     lat:['34.213810', '34.42514', '34.035172'],
     lon:['-77.805527', '-77.54562', '-77.893600']
 }
-var beachName = 'Wrightsville Beach'; 
-var dropDownEl = $('#dropdown')
-
-//default dipaly
+//default diplay
+var beachName = beach.name[0];
 getCoordinates(beachName)
 
-dropDownEl.change('select', function(event){
-    $('.weather-forecast').text('')
+//click event for selecting beach
+$('#wrightsville').on('click', function(event){
     event.preventDefault()
-    var select = $(this).val()
-    console.log(select)
-    var dropDown = $('#dropdown')[0]
-    for(var i = 0; i<dropDown.length; i++){
-        if(select){
-            beachName = beach.name[select]
-            // console.log(beach.name[select])
-            
-        }    
-    }
+    beachName = beach.name[0]
     getCoordinates(beachName)
-    
+})
+$('#carolina').on('click', function(event){
+    event.preventDefault()
+    beachName = beach.name[2]
+    getCoordinates(beachName)
+})
+$('#surfcity').on('click', function(event){
+    event.preventDefault()
+    beachName = beach.name[1]
+    getCoordinates(beachName)
 })
 
+
 function getCoordinates(beachInput){
-    
+    $('.weather-forecast').text('')
     for(var i = 0; i < beach.name.length; i++){
         if(beachInput == beach.name[i]){
             var lat = beach.lat[i]
@@ -41,7 +40,7 @@ function getCoordinates(beachInput){
 
 }
 
-//By using OpenWeatherApi, accept lat,long to retrieve current weather information
+//accept lat,long to retrieve current weather information
 function getForecastWeather(lat,lon){
     var forecastKey = 'a2b4c3401daabb98bf05eae4890ac57c'
     var forecastWeatherUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=hourly,minutely,alerts&appid=${forecastKey}`
