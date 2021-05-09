@@ -1,7 +1,8 @@
 # TheDawnPatrol
 ##Link to the website
 https://themetalsaint.github.io/TheDawnPatrol/
-Description:
+
+## Description:
 Application showing the current weather and surf forecast for key NC surf locations
 
 User Story:
