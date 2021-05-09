@@ -4,34 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>TheDawnPatrol</title>
 </head>
 <body>
+    <div class='navbar-fixed'>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo">Dawn Patrol</a>
+                <ul class="right">
+                    <li><a id = 'dropdown1' class='dropdown-trigger btn waves-effect waves-teal' href='#' data-target='dropdown'>Select a Beach</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <ul id='dropdown' class='dropdown-content'>
+        <li><a id='wrightsville' href="#!">Wrightsville Beach</a></li>
+        <li><a id='carolina' href="#!">Carolina Beach</a></li>
+        <li><a id='surfcity' href="#!">Surf City</a></li>
+    </ul>
     <header>
-        <div class='container'>
             <img src="./assets/images/headerImage.jpg" alt="waves">
-            <h1 class="centered">The Dawn Patrol</h1>
-        </div>
     </header>
 
     <main class='div-container'>
         
         <!-- this idv is for displaying dropdown, graph, etc..-->
+        
+        <h3>Dropdown and other stuffs go here</h3>
         <div class='main-display'>
-            
-            <div class='dropdown-div'>
-                <h3>Select beach:</h3>
-                <section id='dropdownBox'>
-                    <select name="dropdown" id="dropdown">
-                        <option value="0">C-Street, Wrightsville Beach</option>
-                        <option value="1">Surf City Pier</option>
-                        <option value="2">Carolina Beach Pier</option>
-                    </select>
-                </section>
-            </div>
-           
+
+            <!-- <section id='dropdownBox'>
+                <select name="dropdown" id="dropdown">
+                    <option value="">Select beach</option>
+                    <option value="0">C-Street, Wrightsville Beach</option>
+                    <option value="1">Surf City Pier</option>
+                    <option value="2">Carolina Beach Pier</option>
+                </select>
+            </section> -->
+
             <section id = 'waveHeightDisplay'>
+                
                 <section id = 'highHeights'>
                     <div id = 'midnightHigh' class = 'timeblock'></div>
                     <div id = 'a3amHigh' class = 'timeblock'></div>
@@ -41,9 +55,9 @@
                     <div id = 'a3pmHigh' class = 'timeblock'></div>
                     <div id = 'a6pmHigh' class = 'timeblock'></div>
                     <div id = 'a9pmHigh' class = 'timeblock'></div>
-                    <div id = 'a12amHigh' class = 'timeblock'></div>
+                    
                 </section>
-
+                
                 <section id = 'lowHeights'>
                     <div id = 'midnightLow' class = 'timeblock'></div>
                     <div id = 'a3amLow' class = 'timeblock'></div>
@@ -53,25 +67,91 @@
                     <div id = 'a3pmLow' class = 'timeblock'></div>
                     <div id = 'a6pmLow' class = 'timeblock'></div>
                     <div id = 'a9pmLow' class = 'timeblock'></div>
-                    <div id = 'a12amLow' class = 'timeblock'></div>               
+                    
                 </section>
+                <section id = 'times'>
+                    <div class = 'timeblock2' id = 'midnight' >
+                        <p>12am</p>
+                    </div>
+                    <div id = 'a3am' class = 'timeblock2'>
+                        <p>3am</p>
+                    </div>
+                    <div id = 'a6am' class = 'timeblock2'>
+                        <p>6am</p>
+                    </div>
+                    <div id = 'a9am' class = 'timeblock2'>
+                        <p>9am</p>
+                    </div>
+                    <div id = 'a12pm' class = 'timeblock2'>
+                        <p>12pm</p>
+                    </div>
+                    <div id = 'a3pm' class = 'timeblock2'>
+                        <p>3pm</p>
+                    </div>
+                    <div id = 'a6pm' class = 'timeblock2'>
+                        <p>6pm</p>
+                    </div>
+                    <div id = 'a9pm' class = 'timeblock2'>
+                        <p>9pm</p>
+                    </div>
+                    <div id = 'a12am' class = 'timeblock2'>
+                        <p>12am</p>
+                    </div>
+                </section>
+                <section id = 'heightsList'>
+                    <div class = 'height'>
+                        <p>10 ft</p>
+                    </div>
+                    <div class = 'height'>
+                        <p>8 ft</p>
+                    </div>
+                    <div class = 'height'>
+                        <p>6 ft</p>
+                    </div>
+                    <div class = 'height'>
+                        <p>4 ft</p>
+                    </div>
+                    <div class = 'height'>
+                        <p>2 ft</p>
+                    </div>
+                </section>
+                <img src="./assets/images/surfer3.png" alt="surfer" class="surfer">
             </section>
         </div>
-
+        
+        
         <!-- this div is for displaying weather forecast -->
         <div class='card weather-forecast'>
             <h3 class='text-style'>Weather information</h3>
         </div>
-
-
+        
+        
         <!-- this div is for displayig Tide forecast -->
         <div class='card tide-forecast'>
             <h3 class='text-style'>Tide information</h3>
+            
         </div>
 
         <!-- whatever add-ons -->
         <div class='card tide-forecast'>
             <h3 class='text-style'>Other information; eg.beach-info</h3>
+            <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Click for more info!</a>
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                  <h4 class = 'center-align'>Things to know before you go!</h4>
+                  <h6 class = 'center-align'>Wave Heights</h6>
+                    <ul>
+                        <li class = 'surfModal'>1-2ft: Beginner waves! This size is perfect if you are still learning the basics and want a calm environment to practice your paddling and popups. Make sure the board you grab is nice and long and has a good amount of volume because waves of this size won't have very much power behind them. We recommend beginners use at least an 8ft board to ensure there is enough stability and float to give you the best chance to succeed!</li>
+                        
+                        <li class = 'surfModal'>3-5ft: Intermediate waves! This size is great for surfers who have (mostly) figured out their paddling and their popups and are ready to start riding the waves. These waves tend to have a bit more power behind them, allowing surfers to choose from a wider variety of boards to ride. If you are still unsure of what board works best for you, we recommend a fun board or mid-length to still provide plenty of float while allowing you to start to work on nice smooth turns on the open face of the wave.</li>
+                        
+                        <li class = 'surfModal'>6ft+: Advanced waves! There's a saying in surfing that goes, "when in doubt, don't go out!" Safety is very important and the ocean should always be respected. If you truly feel comfortable consistently surfing 3-5ft waves, definitely give these waves a try! However, it is important that you surf with a buddy (at least the first few times), and you understand teh conditions specific to the surf break you paddle out at. At this point you should know which boards you like to ride in what conditions and you are ready to get shacked! Enjoy the surf, waves of this size don't come very often!</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                  <a href="#!" class="modal-close waves-effect waves-green btn-flat">Raja</a>
+                </div>
+              </div>
         </div>
 
     </main>
@@ -79,8 +159,9 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./assets/js/weatherApi.js"></script>
     <script src="./assets/js/tideApi.js"></script>
     <script src="./assets/js/surfAPI.js"></script>
+    <script src="./assets/js/modal.js"></script>
 </body>
-</html>
