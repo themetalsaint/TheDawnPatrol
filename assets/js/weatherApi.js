@@ -47,7 +47,7 @@ function getForecastWeather(lat,lon){
     fetch(forecastWeatherUrl)
         .then(function(response){
             response.json().then(function(weather){
-            // console.log(weather)
+            console.log(weather)
             displayWeather(weather)
         })
     })
@@ -57,11 +57,11 @@ function getForecastWeather(lat,lon){
 function displayWeather(weatherData){
     
     var weatherCardEl = $('.weather-forecast')
-    var beachEl = $('<h3>')
+    var beachEl = $('<h6>')
     beachEl.addClass('text-style beach-name')
     beachEl.text(beachName)
 
-    var currentEl = $('<h3>')
+    var currentEl = $('<h6>')
     currentEl.addClass('text-style')
     currentEl.text('Now')
 
