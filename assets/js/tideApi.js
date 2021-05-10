@@ -33,7 +33,7 @@ function callTideApi(beaches, beachN){
                 getTideInfo(tideData)
 
             })
- 
+    })
 
 }
 
