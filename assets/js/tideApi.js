@@ -6,3 +6,10 @@ fetch(tideApiUrl)
             
         })
     })
+
+    $(document).ready(function(){
+   
+        setInterval(function(){
+            $("#date").text(moment().format('MMMM Do YYYY, h:mm:ss a'));
+        }, 1000);
+    })
