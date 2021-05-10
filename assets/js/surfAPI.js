@@ -74,6 +74,12 @@ function updateWaveHeights() {
   }
 }
 
+$(document).ready(function(){
+   
+  setInterval(function(){
+      $("#date").text(moment().format('MMMM Do YYYY, h:mm a'));
+  }, 1000);
+})
 // midnight today
 // 3am today
 // 

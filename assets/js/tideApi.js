@@ -33,7 +33,7 @@ function callTideApi(bId, beachN){
                 getTideInfo(tideData)
 
             })
-        })
+ 
 
 }
 
@@ -209,4 +209,13 @@ function showSlides(n){
     tideSlides[slideIndex -1].style.display = 'block'
 }
 
+
+    })
+
+    $(document).ready(function(){
+   
+        setInterval(function(){
+            $("#date").text(moment().format('MMMM Do YYYY, h:mm:ss a'));
+        }, 1000);
+    })
 

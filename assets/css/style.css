@@ -80,6 +80,9 @@ img{
     /* left: 400px; */
 }
 
+  #date{
+    margin-left: 36%;
+  }
 
   #waveHeightDisplay {
     border: 1px solid black;
