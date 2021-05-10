@@ -1,30 +1,30 @@
 
 
-var beaches = ['5842041f4e65fad6a7708a65', '5842041f4e65fad6a7708a58', '5842041f4e65fad6a7708a49']
+var beachId = ['5842041f4e65fad6a7708a65', '5842041f4e65fad6a7708a58', '5842041f4e65fad6a7708a49']
 var beachN = ['Wrightsville Beach', 'Carolina Beach', 'Surf City Pier']
-callTideApi(beaches[0], beachN[0])
+callTideApi(beachId[0], beachN[0])
 
 $('#wrightsville').on('click', function(event){
     
     event.preventDefault()
-    callTideApi(beaches[0], beachN[0])
+    callTideApi(beachId[0], beachN[0])
     
 })
 $('#carolina').on('click', function(event){
     
     event.preventDefault()
-    callTideApi(beaches[1], beachN[1])
+    callTideApi(beachId[1], beachN[1])
     
 })
 $('#surfcity').on('click', function(event){
     event.preventDefault()
-    callTideApi(beaches[2], beachN[2])
+    callTideApi(beachId[2], beachN[2])
 })
 // $('.tide-forecast').text('')
 
-function callTideApi(beaches, beachN){
+function callTideApi(bId, beachN){
     $('.table').text('')
-    var tideApiUrl = `https://services.surfline.com/kbyg/spots/forecasts/?spotId=${beaches}&days=3&intervalHours=12&maxHeights=false`
+    var tideApiUrl = `https://services.surfline.com/kbyg/spots/forecasts/?spotId=${bId}&days=3&intervalHours=12&maxHeights=false`
     fetch(tideApiUrl)
             .then(function(response){
                 response.json().then(function(tideData){
@@ -33,7 +33,9 @@ function callTideApi(beaches, beachN){
                 getTideInfo(tideData)
 
             })
-    })
+
+        })
+
 
 }
 
@@ -210,12 +212,12 @@ function showSlides(n){
 }
 
 
-    })
 
-    $(document).ready(function(){
+
+$(document).ready(function(){
    
-        setInterval(function(){
-            $("#date").text(moment().format('MMMM Do YYYY, h:mm:ss a'));
-        }, 1000);
-    })
+    setInterval(function(){
+        $("#date").text(moment().format('MMMM Do YYYY, h:mm:ss a'));
+    }, 1000);
+})
 
