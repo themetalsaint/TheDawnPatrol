@@ -34,13 +34,11 @@ img{
 }
   .card{
       width: 400px;
-      height: 500px;
+      height: 600px;
       background-color: aqua;
       margin-right: 15px;
-      margin-bottom:15px;
-      
-     
-      
+      margin-bottom:15px;  
+      border-radius: 10px;;
   }
   .capital{
     text-transform: capitalize;
@@ -52,7 +50,8 @@ img{
 
   }
   .text-style{
-      margin-left: 20%;
+      margin-left: 5%;
+      font-size: 24px;
   }
   .current-img{
     position: relative;
@@ -194,4 +193,37 @@ nav{
   margin-left: -20px;
   overflow: visible;
   text-align: right;
+}
+/* tide info styling start here */
+tr{
+  line-height: 0px;
+}
+
+td,th,table{
+  padding-left: 12px;
+}
+.slider-btn{
+  position: relative;
+  top: 50%;
+  font-size: 24px;
+  background-color: aqua;
+  border: none;
+  cursor: pointer;
+}
+.prev-btn{
+  float: left;
+  
+}
+.next-btn{
+  float: right;
+}
+.tide-forecast{
+  position: relative;
+  width: 335px;
+  height: 400px;
+  /* background-color: rgb(14, 145, 123); */
+  margin-left: 35px;
+  margin-bottom:15px;
+  overflow: auto;
+  display: none;
 }

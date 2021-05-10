@@ -127,13 +127,51 @@
         
         
         <!-- this div is for displayig Tide forecast -->
-        <div class='card tide-forecast'>
+        <div class='card tide-slider'>
+            <button class='prev-btn slider-btn'><</button>
+            <button class='next-btn slider-btn'>></button>
+
             <h3 class='text-style'>Tide information</h3>
+            <h3 class='text-style beach'></h3>
+
+            <div class='tide-forecast'>
+                <h3 class='text-style today'></h3>
+                <table class='today-table table'>
+                    <tr>
+                        <th></th>
+                        <th>Type</th>
+                        <th>Height</th>   
+                    </tr>          
+                </table>
+                 
+             </div>
+            <div class='tide-forecast'>
+                <h3 class='text-style day2'></h3>
+                <table class='day2-table table'>
+                    <tr>
+                        <th></th>
+                        <th>Type</th>
+                        <th>Height</th>
+                    </tr> 
+                </table>
+                  
+            </div>
+            <div class='tide-forecast'>
+                <h3 class='text-style day3'></h3>
+                <table class='day3-table table'>
+                    <tr>
+                        <th></th>
+                        <th>Type</th>
+                        <th>Height</th>
+                    </tr>         
+                </table>  
+            </div>
             
         </div>
+        
 
         <!-- whatever add-ons -->
-        <div class='card tide-forecast'>
+        <div class='card'>
             <h3 class='text-style'>Other information; eg.beach-info</h3>
             <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Click for more info!</a>
             <div id="modal1" class="modal">
