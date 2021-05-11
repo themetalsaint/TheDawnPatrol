@@ -77,7 +77,8 @@ img{
     opacity: 75%;
     position: absolute;
     bottom: 0px;
-    /* left: 400px; */
+    /* left: -50px; */
+    right: 750px;
 }
 
   #date{
