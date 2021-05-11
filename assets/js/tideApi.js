@@ -1,5 +1,4 @@
 
-
 var beachId = ['5842041f4e65fad6a7708a65', '5842041f4e65fad6a7708a58', '5842041f4e65fad6a7708a49']
 var beachN = ['Wrightsville Beach', 'Carolina Beach', 'Surf City Pier']
 callTideApi(beachId[0], beachN[0])
@@ -20,7 +19,7 @@ $('#surfcity').on('click', function(event){
     event.preventDefault()
     callTideApi(beachId[2], beachN[2])
 })
-// $('.tide-forecast').text('')
+
 
 function callTideApi(bId, beachN){
     $('.table').text('')
@@ -41,7 +40,7 @@ function callTideApi(bId, beachN){
 
 
 function getTideInfo(tideData){
-    // $('.tide-forecast').text('')
+
     var dailyTimestamp = []
     var timestampData = []
     for (var i = 0; i < tideData.data.tides.length; i++){
@@ -55,10 +54,9 @@ function getTideInfo(tideData){
             dailyTimestamp.push(tideInfo)
         }     
     }
-    // console.log(moment.unix(1620885600).format('h a MM/DD'))
+    
     var dailyTideArray = []
     filterUnixFormat(dailyTimestamp, dailyTideArray)
-    // console.log(dailyTideArray)
 
     //find index for each day
     var day1 = (element) => element === dailyTideArray[1].timestamp;
@@ -76,7 +74,6 @@ function getTideInfo(tideData){
     getHourlyTideData(tideData, day1Index, day2Index, table[0], h3[0]) 
     getHourlyTideData(tideData, day2Index, day3Index, table[1], h3[1])
     getHourlyTideData(tideData, day3Index, day4Index, table[2], h3[2])
-    // getHourlyTideData(tideData, day4Index, endIndex, table[3], h3[3])
    
 }//end getTideInfo()
 
@@ -85,7 +82,7 @@ function filterUnixFormat(stamp,array){
     for(var i = 1; i < stamp.length; i += 2){
         array.push(stamp[i])
     }
-    // console.log(array)
+    
 
 }//end filterUnixFormat()
 
@@ -113,39 +110,39 @@ function getHourlyTideData(tideData, startDayIndex, endDayIndex, table ,h3){
 
 }//end getHourlyTideData()
 
-function appendTideInfo(hourlyTideInfo, table ,h3, day){
-   
+function appendTideInfo(hourlyTideInfo, table ,h3){
+
+//append type and height header 
+    var thType = $('<th>').text('Type')
+    var thHeight = $('<th>').text('Height')
+    var trHeader = $('<tr>').append('<th>', thType, thHeight)
+    $(table).append(trHeader)
+
     var currentTime = moment().format('H')
-    for(var i = 6; i < 19; i++){
+    for(var i = 6; i < 19; i++){ 
         if(table == '.today-table'){
 //append data starting from current time; only to today-table
             for(var i = currentTime; i < 24; i++){
                 var hourly = (moment.unix(hourlyTideInfo[i].timestamp).format('h a'))
                 var type = hourlyTideInfo[i].type
                 var height = hourlyTideInfo[i].height
-                var today = $('<h3>')
-                today.addClass('text-style')
-                var tr = $('<tr>')
-                var thHourly = $('<th>')
-                var tdType = $('<td>')
-                var tdHeight = $('<td>')
-            
-                thHourly.text(hourly)
+
+                var thHourly = $('<th>').text(hourly)
+                var tdType = $('<td>').text(type)
+                var tdHeight = $('<td>').text(`${height} ft`)
+
                 var currentHour = (moment.unix(hourlyTideInfo[i].timestamp).format('MM/DD h a'))
                 if(currentHour == moment().format('MM/DD h a')){
                     thHourly.text('Now')
                 }
-        
-                tdType.text(type)
-                tdHeight.text(`${height} ft`)
+                var trData = $('<tr>').append(thHourly, tdType, tdHeight)
                 
-                tr.append(thHourly)
-                tr.append(tdType)
-                tr.append(tdHeight)
                 
-                $(table).append(tr)
+                $(table).append(trData)
+               
                 $(h3).text(`Today (${moment().format('dddd MM/DD')})`)        
             }
+            
 
  //append data from 6am to 6pm; to forecast-table          
         }
@@ -153,26 +150,13 @@ function appendTideInfo(hourlyTideInfo, table ,h3, day){
             var hourly = (moment.unix(hourlyTideInfo[i].timestamp).format('h a'))
             var type = hourlyTideInfo[i].type
             var height = hourlyTideInfo[i].height
-            var today = $('<h3>')
-            today.addClass('text-style')
-            var tr = $('<tr>')
-            var thHourly = $('<th>')
-            var tdType = $('<td>')
-            var tdHeight = $('<td>')
-        
-            thHourly.text(hourly)
-            var currentHour = (moment.unix(hourlyTideInfo[i].timestamp).format('MM/DD h a'))
-            if(currentHour == moment().format('MM/DD h a')){
-                thHourly.text('Now')
-            }
-    
-            tdType.text(type)
-            tdHeight.text(`${height} ft`)
-            
-            tr.append(thHourly)
-            tr.append(tdType)
-            tr.append(tdHeight)
-            
+            var today = $('<h3>').addClass('text-style')
+         
+            var thHourly = $('<th>').text(hourly)
+            var tdType = $('<td>').text(type)
+            var tdHeight = $('<td>').text(`${height} ft`)
+
+            var tr = $('<tr>').append(thHourly, tdType, tdHeight)
             $(table).append(tr)    
 
             var date = (moment.unix(hourlyTideInfo[i].timestamp).format('dddd MM/DD'))
@@ -185,19 +169,19 @@ function appendTideInfo(hourlyTideInfo, table ,h3, day){
 
 } //end appendTideInfo()
 
-
+//slides starts here
 var tideSlides = $('.tide-forecast')
 tideSlides[0].style.display = 'block'
 
 var slideIndex = 1
 $('.next-btn').on('click', function(event){
     event.preventDefault()
-    showSlides(slideIndex += 1)
+    showSlides(slideIndex++)
 
 })
 $('.prev-btn').on('click', function(event){
     event.preventDefault()
-    showSlides(slideIndex += -1)
+    showSlides(slideIndex--)
     
 
 })
@@ -210,9 +194,7 @@ function showSlides(n){
     }
     tideSlides[slideIndex -1].style.display = 'block'
 }
-
-
-
+//slides ends here
 
 $(document).ready(function(){
    
