@@ -119,7 +119,7 @@ function appendTideInfo(hourlyTideInfo, table ,h3, day){
     for(var i = 6; i < 19; i++){
         if(table == '.today-table'){
 //append data starting from current time; only to today-table
-            for(var i = currentTime; i < 19; i++){
+            for(var i = currentTime; i < 24; i++){
                 var hourly = (moment.unix(hourlyTideInfo[i].timestamp).format('h a'))
                 var type = hourlyTideInfo[i].type
                 var height = hourlyTideInfo[i].height
