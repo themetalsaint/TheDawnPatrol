@@ -291,3 +291,7 @@ td,th,table{
     height: 22.5px;
   }
 }
+
+.show {
+  display: block;
+}
