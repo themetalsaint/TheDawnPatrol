@@ -13,7 +13,8 @@ $(document).ready(function() {
   var carolinaLaws = document.getElementById('carolinaLaws')
   var surfcityLaws = document.getElementById('surfcityLaws')
   var wrightsvilleLaws = document.getElementById('wrightsvilleLaws')
- 
+  var spotImage = document.getElementById('spotImage')
+
 carolina.onclick = function(){
   carolinaParking.classList.remove('hide')
   carolinaLaws.classList.remove('hide')
