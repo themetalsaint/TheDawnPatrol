@@ -293,4 +293,6 @@ td,th,table{
   }
 }
 
-.
+#localInfo {
+  overflow-y: auto;
+}
