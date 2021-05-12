@@ -77,7 +77,8 @@ img{
     opacity: 75%;
     position: absolute;
     bottom: 0px;
-    /* left: 400px; */
+    /* left: -50px; */
+    right: 750px;
 }
 
   #date{
@@ -239,4 +240,54 @@ td,th,table{
   margin-top: 65px;
   font-size: 24px;
   
+}
+
+@media screen and (max-width: 950px) {
+  #waveHeightDisplay {
+    border: 1px solid black;
+    width: 300px;
+    height: 112.5px;
+    position: absolute;
+    left: 50%;
+    margin-left: -150px;
+    background-color: lightblue;
+    
+  }
+  #times .timeblock2,   .timeblock {
+    width: 37.5px;
+  }
+  #a3amHigh, #a3amLow, #a3am {
+    left: 37.5px
+  }
+  
+  #a6amHigh, #a6amLow, #a6am {
+    left: 75px;
+  }
+  #a9amHigh, #a9amLow, #a9am {
+    left: 112.5px;
+  }
+  #a12pmLow, #a12pmHigh, #a12pm {
+    left: 150px;
+  }
+  #a3pmHigh, #a3pmLow, #a3pm {
+    left: 187.5px;
+  }
+  #a6pmHigh, #a6pmLow, #a6pm {
+    left: 225px;
+  }
+  #a9pmHigh, #a9pmLow, #a9pm {
+    left: 262.5px;
+    /* left: 262.5px; */
+  }
+  #a12am {
+    left: 299px;
+  }
+  .surfer {
+    width: 37.5px;
+    height: 67.5px;
+    right: 280px;
+  }
+  #heightsList .height {
+    height: 22.5px;
+  }
 }
