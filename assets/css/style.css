@@ -1,6 +1,7 @@
 body{
     margin: 0; 
     padding: 0;
+    background-color: rgb(9, 177, 228);
 }
 .container {
     position: relative;
@@ -28,14 +29,14 @@ img{
     width: 100%;
     height: 400px;
     margin-bottom:15px;
-    background-color: aqua;
+    background-color: lightskyblue;
     padding:15px;
 
 }
   .card{
       width: 400px;
       height: 600px;
-      background-color: aqua;
+      background-color: lightskyblue;
       margin-right: 15px;
       margin-bottom:15px;  
       border-radius: 10px;;
@@ -156,7 +157,7 @@ img{
 
 
 nav{
-  background-color: lightseagreen;
+  background-color: rgb(9, 177, 228);
 }
 
 #times .timeblock2 {
@@ -291,3 +292,5 @@ td,th,table{
     height: 22.5px;
   }
 }
+
+.
