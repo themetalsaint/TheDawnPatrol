@@ -108,6 +108,7 @@ function handleViewChange(e) {
     moveMan();
   }
 }
+
  
 // Register event listener
 mediaQuery.addListener(handleViewChange)
