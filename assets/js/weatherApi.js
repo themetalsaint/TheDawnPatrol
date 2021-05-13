@@ -15,20 +15,37 @@ $('#wrightsville').on('click', function(event){
     event.preventDefault()
     beachName = beach.name[0]
     getCoordinates(beachName)
-    
+    $('.body').css('background-color','rgb(9, 177, 228)')
     
 })
 $('#carolina').on('click', function(event){
     event.preventDefault()
     beachName = beach.name[2]
     getCoordinates(beachName)
+    $('.body').css('background-color','blueviolet')
+   
+    
     
 })
 $('#surfcity').on('click', function(event){
     event.preventDefault()
     beachName = beach.name[1]
     getCoordinates(beachName)
+    $('.body').css('background-color','rgb(18, 112, 34)')
+
 })
+
+if(beachName === 'Wrightsville Beach'){
+    $('.body').css('background-color','rgb(9, 177, 228)')
+    
+}
+if(beachName === 'Carolina Beach'){
+    $('.body').css('background-color','blueviolet')
+}
+if(beachName === 'Surf City Pier'){
+    $('.body').css('background-color','rgb(18, 112, 34)')
+}
+
 
 
 function getCoordinates(beachInput){
