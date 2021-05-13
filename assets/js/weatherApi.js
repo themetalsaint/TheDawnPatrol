@@ -13,11 +13,14 @@ $('#wrightsville').on('click', function(event){
     event.preventDefault()
     beachName = beach.name[0]
     getCoordinates(beachName)
+    
+    
 })
 $('#carolina').on('click', function(event){
     event.preventDefault()
     beachName = beach.name[2]
     getCoordinates(beachName)
+    
 })
 $('#surfcity').on('click', function(event){
     event.preventDefault()
@@ -159,6 +162,7 @@ $('.p-btn').on('click', function(event){
     show(slideIndex--)
     
 
+
 })
 
 function show(n){
@@ -168,4 +172,9 @@ function show(n){
         weatherSlides[i].style.display = 'none'
     }
     weatherSlides[slideIndex -1].style.display = 'block'
+
+    weatherCardEl.append( beachEl, iconEl, currentEl, descriptionEl, tempEl, windEl, humidityEl, uvEl)
+    localStorage.setItem('weatherCardEl', weatherCardEl)
+    console.log('weatherCardEl:', weatherCardEl)
+
 }

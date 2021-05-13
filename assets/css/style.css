@@ -2,16 +2,17 @@ body{
     margin: 0; 
     padding: 0;
     background-color: rgb(9, 177, 228);
+    color: white;
 }
 .container {
     position: relative;
     text-align: center;
-    color: white;
   }
 img{
     width: 100%;
     height: 25vh;
 }
+
 .centered {
     position: absolute;
     top: 50%;
@@ -29,18 +30,24 @@ img{
     width: 100%;
     height: 400px;
     margin-bottom:15px;
-    background-color: lightskyblue;
+    background-color: lightseagreen;
     padding:15px;
 
 }
+
+#homeBtn{
+margin-left: 3vw;
+
+}
+
   .card{
       width: 500px;
       height: 600px;
-      background-color: lightskyblue;
       margin-right: auto;
       margin-left: auto;
+      background-color: lightseagreen;
       margin-bottom:15px;  
-      border-radius: 10px;;
+      border-radius: 10px;
   }
   .capital{
     text-transform: capitalize;
@@ -310,5 +317,22 @@ td,th,table{
   padding: 20px;
   text-align: left;
   overflow: auto;
+}
+
+
+#localInfo {
+  overflow-y: auto;
+}
+
+#modalBtn{
+  background-color: rgb(9, 177, 228);
+}
+
+#modal1 {
+  background-color: blueviolet;
+}
+
+#raja {
+  color: white;
 }
 
