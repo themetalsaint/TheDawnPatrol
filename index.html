@@ -26,13 +26,14 @@
     </ul>
     <header>
             <img id='spotImage' src="./assets/images/wrightsville3.jpg" alt="wrightsville">
+            <h3 id ="date"></h3>
     </header>
 
     <main class='div-container'>
         
         <!-- this idv is for displaying dropdown, graph, etc..-->
         
-        <h3 id ="date"></h3>
+        
         <div class='main-display z-depth-3'>
 
             <!-- <section id='dropdownBox'>
@@ -121,11 +122,28 @@
         
         
         <!-- this div is for displaying weather forecast -->
-        <div class='card z-depth-3'>
-            <h3 class='text-style'>Weather information</h3>
+        <div class='card'>
+            <h3 class= 'text-style'>Weather information</h3>
+            <h3 class='text-style beach'></h3>
+            
+            <button class='p-btn slider-btn'><</button>
+            <button class='n-btn slider-btn'>></button>
             <div class='weather-forecast'>
-
+                <h3 class='text-style day1-w'></h3>
+                <table class='today-weather weather'></table>
+   
             </div>
+            <div class='weather-forecast'>
+                <h3 class='text-style day2-w'></h3>
+                <table class='day2-weather weather'></table>
+                
+            </div>
+            <div class='weather-forecast'>
+                <h3 class='text-style day3-w'></h3>
+                <table class='day3-weather weather'></table>    
+            </div>
+            
+            
         </div>
         
         
@@ -156,6 +174,18 @@
         
 
         <!-- whatever add-ons -->
+
+        <div class='card z-depth-3 local-info'>
+            <h5 class=''>Local Spot Info</h5>
+            <div class='divider'></div>
+            <h6 class ='center-align section'>Parking:</h6>
+            <div id='wrightsvilleParking' class='m-2' >When parking at Wrightsville Beach, keep in mind that there is no free parking on the island and the metered spots are limited (especially during the summer). We recommend showing up early to guaruntee your crew a convenient spot near the break you are hoping to surf at. This paid parking costs $5/hr or $25/day and is in effect from March 1st through October 31st between the hours of 9am and 7pm everyday, so dawn patrol sessions are free if you time them correctly! The easiest parking is in front of Johnny Mercer's pier or over by the Oceanic Restaurant, depending on what part of the island you are hoping to surf. </div>
+            <p id='carolinaParking' class='hide'>When parking at Carolina Beach, make sure you pay attention to the parking signs in the immediate area. Metered parking is much more limited, so this beach friendlier for the afternoon session surfer (as long as the beach isn't too crowded). We recommend parking a street or two off of the beach in the residential areas and walking a bit. Residents tend to be friendly towards beachgoers as long as you respect the parking immediately infront of their houses. When in doubt, just ask!</p>
+            <p id='surfcityParking' class='hide'> When parking at Surf City, it is extra important to pay attention to the signage of the area in which you park. Surf City has a variety of parking options that vary in cost, and the city even offers a parking pass for the April 1st - October 31st paid parking window. If you plan on making this your home break, we recommend spending the $250 on the parking pass. It is definitely a steep price to pay to be able to surf, however your options here are limited and the pass pays for itself if you spend more than 10 days at the beach. It is ver IMPORTANT to get to the beach early during the busy summer months if you dont want to have to walk quite a distance with all of your beach gear. </p>
+            <div class='divider'></div>
+            <h6 class='center-align text-style'>Local Laws</h6>
+            <div id='wrightsvilleLaws'>
+
         <div id='localInfo' class='card z-depth-3'>
             <h3 class='text-style'>Local Spot Info</h3>
             <div class='divider'></div>
@@ -166,6 +196,7 @@
             <div class='divider'></div>
             <h6 class='card-content center-align flow-text'>Local Laws</h6>
             <div id='wrightsvilleLaws' class='card-content'>
+
                 <li>Don't surf between piers and 'No Surfing' signs</li>
                 <li>During the summer months, pay attention to the designated surfing areas outlined by the lifeguards using flags</li>
                 <li>Be respectful of other surfers' waves, don't be a kook!</li>
@@ -179,7 +210,11 @@
                 <li>Be respectful of other surfers' waves, don't be a kook!</li>
             </div>
             <div class='divider'></div>
+
+            <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Things to know before you go!</a>
+
             <a id='modalBtn' class="waves-effect waves-light btn modal-trigger" href="#modal1">Click for more info!</a>
+
             <div id="modal1" class="modal">
                 <div class="modal-content">
                   <h4 class = 'center-align'>Things to know before you go!</h4>

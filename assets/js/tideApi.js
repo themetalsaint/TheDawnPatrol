@@ -38,7 +38,6 @@ function callTideApi(bId, beachN){
 
 }
 
-
 function getTideInfo(tideData){
 
     var dailyTimestamp = []
@@ -99,13 +98,12 @@ function getHourlyTideData(tideData, startDayIndex, endDayIndex, table ,h3){
         }
     }
 
-    // console.log(hourlyTimeStamp)
     var hourlyTideArray = []
     
     filterUnixFormat(hourlyTimeStamp, hourlyTideArray)    
     // console.log(hourlyTideArray)
     
-    appendTideInfo(hourlyTideArray, table, h3, startDayIndex)
+    appendTideInfo(hourlyTideArray, table, h3)
    
 
 }//end getHourlyTideData()
@@ -150,7 +148,6 @@ function appendTideInfo(hourlyTideInfo, table ,h3){
             var hourly = (moment.unix(hourlyTideInfo[i].timestamp).format('h a'))
             var type = hourlyTideInfo[i].type
             var height = hourlyTideInfo[i].height
-            var today = $('<h3>').addClass('text-style')
          
             var thHourly = $('<th>').text(hourly)
             var tdType = $('<td>').text(type)
@@ -172,6 +169,8 @@ function appendTideInfo(hourlyTideInfo, table ,h3){
 //slides starts here
 var tideSlides = $('.tide-forecast')
 tideSlides[0].style.display = 'block'
+
+
 
 var slideIndex = 1
 $('.next-btn').on('click', function(event){
