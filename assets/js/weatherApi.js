@@ -27,7 +27,7 @@ $('#surfcity').on('click', function(event){
 
 
 function getCoordinates(beachInput){
-    $('.weather-forecast').text('')
+    $('.weather').text('')
     for(var i = 0; i < beach.name.length; i++){
         if(beachInput == beach.name[i]){
             var lat = beach.lat[i]
@@ -42,53 +42,130 @@ function getCoordinates(beachInput){
 
 //accept lat,long to retrieve current weather information
 function getForecastWeather(lat,lon){
+    
     var forecastKey = 'a2b4c3401daabb98bf05eae4890ac57c'
-    var forecastWeatherUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=hourly,minutely,alerts&appid=${forecastKey}`
+    var forecastWeatherUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=minutely&appid=${forecastKey}`
     fetch(forecastWeatherUrl)
         .then(function(response){
             response.json().then(function(weather){
             console.log(weather)
-            displayWeather(weather)
+            getHourlyData(weather)
+
         })
     })
 }
 
-//display the current weather info to the page
-function displayWeather(weatherData){
+function getHourlyData(weatherData){
+   
+    var dailyData = weatherData.hourly
+    var daily = []
+    //find start day index
+    for (var i = 0; i < dailyData.length; i++){
+        var dayDt = moment.unix(dailyData[i].dt).format('MM/DD')
+        if(daily.indexOf(dayDt) === -1){
+            daily.push(dayDt)
+            daily.push(dailyData[i])
+        }
+        
+    }
+    var dailyDt = []
+    filterUnixFormat(daily, dailyDt)
+
+    //find index of each staring day
+    var currentDay = (element) => element === dailyDt[0];
+    var currentDayIndex = dailyData.findIndex(currentDay)
+    var nextDay = (element) => element === dailyDt[1];
+    var nextDayIndex = dailyData.findIndex(nextDay)
+    var lastDay = (element) => element === dailyDt[2];
+    var lastDayIndex = dailyData.findIndex(lastDay)
+    var endDay = (element) => element === dailyData[(dailyData.length-1)]
+    var endDayIndex = dailyData.findIndex(endDay)
+
+    var weatherTable = ['.today-weather', '.day2-weather', '.day3-weather']
+    var day = ['.day1-w', '.day2-w', '.day3-w']
+    displayWeather(weatherTable[0], day[0], weatherData, currentDayIndex, nextDayIndex)
+    displayWeather(weatherTable[1], day[1], weatherData, nextDayIndex, lastDayIndex)
+    displayWeather(weatherTable[2], day[2], weatherData, lastDayIndex, endDayIndex)
+
+    // console.log(dailyData)
+    // console.log(dailyDt)
+    // console.log(currentDayIndex)
+    // console.log(nextDayIndex)
+    // console.log(lastDayIndex)
+    // console.log(dailyData[endDayIndex])
     
-    var weatherCardEl = $('.weather-forecast')
-    var beachEl = $('<h6>')
-    beachEl.addClass('text-style beach-name')
-    beachEl.text(beachName)
+}
 
-    var currentEl = $('<h6>')
-    currentEl.addClass('text-style')
-    currentEl.text('Now')
-
-    var iconEl = $('<img>')
-    iconEl.attr('src',`https://openweathermap.org/img/wn/${weatherData.current.weather[0].icon}@2x.png`)
-    iconEl.addClass('current-img text-style')
-
-    var descriptionEl = $('<p>')
-    descriptionEl.addClass('text-style capital')
-    descriptionEl.text(weatherData.current.weather[0].description)
+function filterUnixFormat(rawDataArray, arrayToPush){
     
-    var tempEl = $('<p>')
-    tempEl.addClass('text-style')
-    tempEl.text(`Temp: ${weatherData.current.temp} \xB0F`)
+    for(var i = 1; i < rawDataArray.length; i += 2){
+        arrayToPush.push(rawDataArray[i])
+    }
+    
 
-    var windEl = $('<p>')
-    windEl.addClass('text-style')
-    windEl.text(`Wind Speed: ${weatherData.current.wind_speed} MPH`)
+}//end filterUnixFormat()
 
-    var humidityEl = $('<p>')
-    humidityEl.addClass('text-style')
-    humidityEl.text(`Humidity: ${weatherData.current.humidity}%`)
+ //display the current weather info to the page
+function displayWeather(weatherTable, day, weatherData, startIndex, endIndex){
+    // $('.weather-forecast').text('')
+    var hourlyData = weatherData.hourly
+    console.log(hourlyData)
+    //append type and height header
+    var thTemp = $('<th>').text('Temp')
+    var thWind = $('<th>').text('Wind')
+    var thHu = $('<th>').text('Humidity')
+    var thUv = $('<th>').text('UVI')
+    var trHeader = $('<tr>').append('<th>', thTemp, thWind, thHu, thUv)
+    $(weatherTable).append(trHeader)
 
-    var uvEl = $('<p>')
-    uvEl.addClass('text-style')
-    uvEl.text(`UV Index: (${weatherData.current.uvi})`)
+    for(var i = startIndex; i < endIndex; i++){
+        var hour = $('<th>').text(moment.unix(hourlyData[i].dt).format('h a'))
+        var temp = $('<td>').text(hourlyData[i].temp + '\xB0F')
+        var wind = $('<td>').text(hourlyData[i].wind_speed + ' mph')
+        var humid = $('<td>').text(hourlyData[i].humidity + '%')
+        var uv = $('<td>').text(`(${hourlyData[i].uvi})`)
+        if(hour.text() == moment().format('h a')){
+            hour.text('Now')
+        }
+        var trData = $('<tr>').append(hour, temp, wind, humid, uv)
 
-    weatherCardEl.append( beachEl, iconEl, currentEl, descriptionEl, tempEl, windEl, humidityEl, uvEl)
+        
+        $(weatherTable).append(trData)
 
+
+        var date = (moment.unix(hourlyData[i].dt).format('dddd MM/DD'))
+        if(date == moment().format('dddd MM/DD')){
+            date = `Today (${date})`
+        }
+        $(day).text(date)
+
+    }
+   
+}
+
+
+//slide sections
+var weatherSlides = $('.weather-forecast')
+weatherSlides[0].style.display = 'block'
+
+var slideIndex = 1
+$('.n-btn').on('click', function(event){
+    event.preventDefault()
+    show(slideIndex++)
+
+})
+$('.p-btn').on('click', function(event){
+    event.preventDefault()
+    show(slideIndex--)
+    
+
+})
+
+function show(n){
+    if( slideIndex > weatherSlides.length){slideIndex = 1}
+    if( slideIndex < 1 ){slideIndex = weatherSlides.length}
+    for(var i = 0; i< weatherSlides.length;i++){
+        weatherSlides[i].style.display = 'none'
+    }
+    weatherSlides[slideIndex -1].style.display = 'block'
 }

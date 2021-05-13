@@ -34,10 +34,11 @@ img{
 
 }
   .card{
-      width: 400px;
+      width: 500px;
       height: 600px;
       background-color: lightskyblue;
-      margin-right: 15px;
+      margin-right: auto;
+      margin-left: auto;
       margin-bottom:15px;  
       border-radius: 10px;;
   }
@@ -56,11 +57,11 @@ img{
       font-size: 20px;
   }
   .current-img{
-    position: relative;
-    top: 80px;
-    left: 30px;
-    width: 60px;
-    height: 60px;
+    /* position: relative; */
+    /* top: 80px;
+    left: 30px; */
+    width: 30px;
+    height: 30px;
     
   }
   .beach-name{
@@ -83,7 +84,7 @@ img{
 }
 
   #date{
-    margin-left: 36%;
+    text-align: center;
   }
 
   #waveHeightDisplay {
@@ -204,21 +205,29 @@ tr{
 }
 
 td,th,table{
-  padding-left: 12px;
+  /* padding-left: 12px; */
+  text-align: center;
+  
 }
 .slider-btn{
   position: relative;
   top: 50%;
   font-size: 24px;
-  background-color: aqua;
+  background-color: lightskyblue;
   border: none;
   cursor: pointer;
+  margin: auto;
 }
-.prev-btn{
+.p-btn,.n-btn{
+  top: 23.5%;
+}
+.prev-btn,
+.p-btn{
   float: left;
   
 }
-.next-btn{
+.next-btn,
+.n-btn{
   float: right;
 }
 .tide-forecast{
@@ -226,15 +235,20 @@ td,th,table{
   width: 335px;
   height: 400px;
   /* background-color: rgb(14, 145, 123); */
-  margin-left: 35px;
+  margin: auto;
   margin-bottom:15px;
   overflow: auto;
   display: none;
 }
 .weather-forecast{
-  width: 300px;
-  margin-left: 45px;
-  /* background-color: cornflowerblue; */
+  position: relative;
+  width: 350px;
+  height: 400px;
+  margin: auto;
+  margin-bottom:15px;
+  /* background-color:aquamarine; */
+  overflow: auto;
+  display: none;
 }
 .beach{
   position: relative;
@@ -292,5 +306,9 @@ td,th,table{
     height: 22.5px;
   }
 }
+.local-info{
+  padding: 20px;
+  text-align: left;
+  overflow: auto;
+}
 
-.
