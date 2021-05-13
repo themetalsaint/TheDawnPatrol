@@ -45,9 +45,6 @@ function callTideApi(bId, beachN){
                 $('.beach').text(beachN)
                 getTideInfo(tideData)
                 
-            
-                // setItem(bId, beachN)
-                
             })
         })
 }

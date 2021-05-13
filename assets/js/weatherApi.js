@@ -122,7 +122,6 @@ function filterUnixFormat(rawDataArray, arrayToPush){
 
  //display the current weather info to the page
 function displayWeather(weatherTable, day, weatherData, startIndex, endIndex){
-    // $('.weather-forecast').text('')
     var hourlyData = weatherData.hourly
     // console.log(hourlyData)
     //append type and height header
@@ -184,9 +183,4 @@ function show(n){
         weatherSlides[i].style.display = 'none'
     }
     weatherSlides[slideIndex -1].style.display = 'block'
-
-    weatherCardEl.append( beachEl, iconEl, currentEl, descriptionEl, tempEl, windEl, humidityEl, uvEl)
-    localStorage.setItem('weatherCardEl', weatherCardEl)
-    console.log('weatherCardEl:', weatherCardEl)
-
 }
