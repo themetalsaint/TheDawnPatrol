@@ -9,42 +9,30 @@
     <title>TheDawnPatrol</title>
 </head>
 <body>
-    <div class='navbar-fixed'>
-        <nav>
-            <div class="nav-wrapper">
-                <a href="#" id='homeBtn' class="brand-logo">Dawn Patrol</a>
-                <ul class="right">
-                    <li><a id = 'dropdown1' class='dropdown-trigger btn waves-effect waves-teal' href='#' data-target='dropdown'>Select a Beach</a></li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-    <ul id='dropdown' class='dropdown-content'>
-        <li><a id='wrightsville' href="#!">Wrightsville Beach</a></li>
-        <li><a id='carolina' href="#!">Carolina Beach</a></li>
-        <li><a id='surfcity' href="#!">Surf City</a></li>
-    </ul>
     <header>
-            <img id='spotImage' src="./assets/images/wrightsville3.jpg" alt="wrightsville">
-            <h3 id ="date"></h3>
+        <nav>
+            <ul>
+                <li class='left title'>Dawn Patrol</li>
+                <li class='right'><a id = 'dropdown1' class='dropdown-trigger btn waves-effect waves-teal' href='#' data-target='dropdown'>Select a Beach</a></li>
+            </ul>
+
+            <ul id='dropdown' class='dropdown-content'>
+                <li><a id='wrightsville' href="#!">Wrightsville Beach</a></li>
+                <li><a id='carolina' href="#!">Carolina Beach</a></li>
+                <li><a id='surfcity' href="#!">Surf City</a></li>
+            </ul>
+        </nav>
+    
+        <!-- <img id='spotImage' src="./assets/images/wrightsville3.jpg" alt="wrightsville"> -->
+        <h3 class='beach header-beach'></h3>
+        <h3 id ="date"></h3>
     </header>
 
     <main class='div-container'>
         
-        <!-- this idv is for displaying dropdown, graph, etc..-->
-        
+        <!-- this is graph <div>-->
         
         <div class='main-display z-depth-3'>
-
-            <!-- <section id='dropdownBox'>
-                <select name="dropdown" id="dropdown">
-                    <option value="">Select beach</option>
-                    <option value="0">C-Street, Wrightsville Beach</option>
-                    <option value="1">Surf City Pier</option>
-                    <option value="2">Carolina Beach Pier</option>
-                </select>
-            </section> -->
-
             <section id = 'waveHeightDisplay'>
                 
                 <section id = 'highHeights'>
@@ -122,7 +110,7 @@
         
         
         <!-- this div is for displaying weather forecast -->
-        <div class='card'>
+        <div class='card weather-card'>
             <h3 class= 'text-style'>Weather information</h3>
             <h3 class='text-style beach'></h3>
             
@@ -173,7 +161,7 @@
         </div>
         
 
-        <!-- whatever add-ons -->
+        <!-- local info <div> -->
         <div id='localInfo' class='card z-depth-3'>
             <h3 class='text-style'>Local Spot Info</h3>
             <div class='divider'></div>
@@ -199,8 +187,6 @@
             </div>
             <div class='divider'></div>
 
-            <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Things to know before you go!</a> -->
-
             <a id='modalBtn' class="waves-effect waves-light btn modal-trigger" href="#modal1">Click for more info!</a>
 
             <div id="modal1" class="modal">
@@ -222,7 +208,9 @@
         </div>
 
     </main>
-    <footer></footer>
+    <footer>
+        <p>@Developed by DawnPatrolTeam @2021</p>
+    </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

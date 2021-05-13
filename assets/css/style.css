@@ -12,7 +12,6 @@ img{
     width: 100%;
     height: 25vh;
 }
-
 .centered {
     position: absolute;
     top: 50%;
@@ -29,94 +28,85 @@ img{
     flex-wrap: nowrap;
     width: 100%;
     height: 400px;
-    margin-bottom:15px;
+    /* margin-bottom: 15px; */
+    margin-top: 15px;
     background-color: lightseagreen;
     padding:15px;
 
-}
-
-#homeBtn{
-margin-left: 3vw;
 
 }
 
-  .card{
-      width: 500px;
-      height: 600px;
-      margin-right: auto;
-      margin-left: auto;
-      background-color: lightseagreen;
-      margin-bottom:15px;  
-      border-radius: 10px;
-  }
-  .capital{
-    text-transform: capitalize;
-    position: relative;
-    bottom: 10px;
-    left: 80px;
-    font-family:cursive;
+.card{
+  width: 500px;
+  height: 600px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: lightseagreen;
+  margin-bottom:15px;  
+  border-radius: 10px;
+}
+.capital{
+  text-transform: capitalize;
+  position: relative;
+  bottom: 10px;
+  left: 80px;
+  font-family:cursive;
       
 
-  }
-
-  .text-style{
-      margin-left: 5%;
-      font-size: 20px;
-  }
-  .current-img{
-    /* position: relative; */
-    /* top: 80px;
-    left: 30px; */
-    width: 30px;
-    height: 30px;
-    
-  }
-  .beach-name{
-      position: relative;
-      top: 50px;
-      font-size: 24px;
-      /* text-align: center; */
-      
-  }
-
-  .surfer{
-    width: 100px;
-    height: 180px;
-    margin-top: 115px;
-    opacity: 75%;
-    position: absolute;
-    bottom: 0px;
-    /* left: -50px; */
-    right: 750px;
 }
 
-  #date{
-    text-align: center;
-  }
+.text-style{
+  margin-left: 5%;
+  font-size: 20px;
+}
+  
+.beach-name{
+  position: relative;
+  top: 50px;
+  font-size: 24px;
+  /* text-align: center; */
+      
+}
 
-  #waveHeightDisplay {
-    border: 1px solid black;
-    width: 800px;
-    height: 300px;
-    position: absolute;
-    left: 50%;
-    margin-left: -400px;
-    background-color: lightblue;
+.surfer{
+  width: 100px;
+  height: 180px;
+  margin-top: 115px;
+  opacity: 75%;
+  position: absolute;
+  bottom: 0px;
+  /* left: -50px; */
+  right: 750px;
+}
+#waveHeightDisplay {
+  border: 1px solid black;
+  width: 800px;
+  height: 300px;
+  position: absolute;
+  left: 50%;
+  margin-left: -400px;
+  background-color: lightblue;
     
-  }
+}
  
-  .timeblock {
-    width: 100px;
-    height: 100px;
-    border: 1px solid blue;
-    position: absolute;
-    bottom: 0;
-  }
+.timeblock {
+  width: 100px;
+  height: 100px;
+  border: 1px solid blue;
+  position: absolute;
+  bottom: 0;
+}
 
-  select{
-    padding: 8px;
-    border-radius: 5px;
+select{
+  padding: 8px;
+  border-radius: 5px;
     
+  }
+  .title{
+    font-size: 32px;
+    margin-left: 3%;
+    font-weight: 700;
+    color:lawngreen
   }
   .dropdown-div{
     width: 300px;
@@ -207,26 +197,33 @@ nav{
   text-align: right;
 }
 /* tide info styling start here */
-tr{
+.weather-forecast tr{
   line-height: 0px;
+  color:cyan;
+ 
 }
-
+.tide-forecast tr{
+  line-height: 0px;
+  color:khaki
+}
 td,th,table{
   /* padding-left: 12px; */
   text-align: center;
   
+  
 }
+
 .slider-btn{
   position: relative;
   top: 50%;
   font-size: 24px;
-  background-color: lightseagreen;
+  color: white;
   border: none;
   cursor: pointer;
   margin: auto;
 }
 .p-btn,.n-btn{
-  top: 23.5%;
+  top: 29.5%;
 }
 .prev-btn,
 .p-btn{
@@ -257,11 +254,29 @@ td,th,table{
   overflow: auto;
   display: none;
 }
+.weather-card,.weather-card .slider-btn{
+  background-color: rgb(14, 50, 117);
+}
+.tide-slider, .tide-slider .slider-btn{
+  background-color: rgb(61, 105, 187);
+}
+
 .beach{
   position: relative;
-  margin-top: 65px;
   font-size: 24px;
   
+}
+#date,.header-beach{
+  position: relative;
+  margin: 25px;
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 20px;
+ 
+}
+.header-beach{
+  font-size: 32px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 @media screen and (max-width: 950px) {
@@ -335,4 +350,9 @@ td,th,table{
 #raja {
   color: white;
 }
-
+footer{
+  text-align: center;
+  padding: 12px;
+  background-color:rgb(105, 75, 36);
+  color:aquamarine
+}
