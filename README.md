@@ -20,10 +20,10 @@ the site stays on the selected beach.
 
 ![Surfing](surfing.gif)
 
-```
+
 Link to the website:
 https://themetalsaint.github.io/TheDawnPatrol/
-
+```
 Link to the Github Repo: 
 https://github.com/themetalsaint/TheDawnPatrol/
 ```
