@@ -17,6 +17,7 @@ THEN a modal shows wave explanations based on skill
 WHEN I refresh the page
 the site stays on the selected beach.
 ```
+![DawnPatrolReadMe](https://user-images.githubusercontent.com/78604328/118198019-1b00fc00-b41e-11eb-81c8-5a3520a42151.png)
 
 ![Surfing](surfing.gif)
 
