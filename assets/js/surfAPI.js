@@ -13,8 +13,9 @@ var responseAPI;
 var timeboxesHigh = [0,0,0,0,0,0,0,0]
 var timeboxesLow = [0,0,0,0,0,0,0,0]
 
-
-surfCall('https://services.surfline.com/kbyg/spots/forecasts/?spotId='+ beaches[0] +'&days=3&intervalHours=12&maxHeights=false');
+var defaultB = beaches[0]
+getItem()
+surfCall('https://services.surfline.com/kbyg/spots/forecasts/?spotId='+ defaultB +'&days=3&intervalHours=12&maxHeights=false');
 moveMan();
 
 wrightsville.addEventListener('click', function() {
@@ -28,7 +29,14 @@ surfCity.addEventListener('click', function() {
 
 })
 
-
+function getItem(){
+  var lastBeach = localStorage.getItem('beachId')
+  if(lastBeach == null){
+    lastBeach = beaches[0]
+  }
+  defaultB = lastBeach
+  // console.log(lastBeach)
+}
 
 
 function buildURL(a){
@@ -43,7 +51,7 @@ function surfCall(url) {
       method: 'GET',
     })
     .then(function (response) {
-      console.log(response);
+      // console.log(response);
       responseAPI = response;
       printData();
     })
@@ -85,7 +93,7 @@ function moveMan() {
     surfer[0].style.right = (750 - spaceToMove) + 'px'
   }
   
-  console.log(surfer, spaceToMove)
+  // console.log(surfer, spaceToMove)
 }
 
 $(document).ready(function(){

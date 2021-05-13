@@ -1,41 +1,71 @@
 
 var beachId = ['5842041f4e65fad6a7708a65', '5842041f4e65fad6a7708a58', '5842041f4e65fad6a7708a49']
 var beachN = ['Wrightsville Beach', 'Carolina Beach', 'Surf City Pier']
-callTideApi(beachId[0], beachN[0])
+
+var defaultBeach = '5842041f4e65fad6a7708a65'
+var defaultBeachName = 'Wrightsville Beach'
+
+getItem()
+callTideApi(defaultBeach, defaultBeachName)
 
 $('#wrightsville').on('click', function(event){
-    
     event.preventDefault()
     callTideApi(beachId[0], beachN[0])
+    defaultBeach = beachId[0]
+    defaultBeachName = beachN[0]
+    setItem(defaultBeach, defaultBeachName)
     
 })
 $('#carolina').on('click', function(event){
     
     event.preventDefault()
     callTideApi(beachId[1], beachN[1])
+    defaultBeach = beachId[1]
+    defaultBeachName = beachN[1]
+    setItem(defaultBeach, defaultBeachName)
     
 })
 $('#surfcity').on('click', function(event){
     event.preventDefault()
     callTideApi(beachId[2], beachN[2])
+    defaultBeach = beachId[2]
+    defaultBeachName = beachN[2]
+    setItem(defaultBeach, defaultBeachName)
 })
 
 
 function callTideApi(bId, beachN){
+    
     $('.table').text('')
     var tideApiUrl = `https://services.surfline.com/kbyg/spots/forecasts/?spotId=${bId}&days=3&intervalHours=12&maxHeights=false`
     fetch(tideApiUrl)
             .then(function(response){
                 response.json().then(function(tideData){
-                console.log(tideData)
+                // console.log(tideData)
                 $('.beach').text(beachN)
                 getTideInfo(tideData)
-
+                
+            
+                // setItem(bId, beachN)
+                
             })
-
         })
+}
+function setItem(bid, bname){
+    localStorage.setItem('beachId', bid)
+    localStorage.setItem('beachName', bname) 
 
-
+}
+function getItem(){
+    var storedId = localStorage.getItem('beachId')
+    var storedName = localStorage.getItem('beachName')
+    if(storedId == null && storedName == null){
+        storedId = '5842041f4e65fad6a7708a65'
+        storedName = 'Wrightsville Beach'
+    }
+    defaultBeach = storedId
+    defaultBeachName = storedName
+    // console.log(defaultBeachName)
 }
 
 function getTideInfo(tideData){
@@ -165,6 +195,8 @@ function appendTideInfo(hourlyTideInfo, table ,h3){
    
 
 } //end appendTideInfo()
+
+
 
 //slides starts here
 var tideSlides = $('.tide-forecast')
