@@ -194,11 +194,5 @@ function showSlides(n){
     tideSlides[slideIndex -1].style.display = 'block'
 }
 //slides ends here
-
-$(document).ready(function(){
-   
-    setInterval(function(){
-        $("#date").text(moment().format('MMMM Do YYYY, h:mm:ss a'));
-    }, 1000);
-})
-
+$("#date").text(moment().format('MMMM Do YYYY, h:mm:ss a'));
+ 
