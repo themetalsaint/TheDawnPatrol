@@ -5,7 +5,9 @@ var beach = {
     lon:['-77.805527', '-77.54562', '-77.893600']
 }
 //default diplay
+
 var beachName = beach.name[0];
+getItem()
 getCoordinates(beachName)
 
 //click event for selecting beach
@@ -39,9 +41,10 @@ function getCoordinates(beachInput){
             getForecastWeather(lat,lon)
         }
     }
-
+    
 
 }
+
 
 //accept lat,long to retrieve current weather information
 function getForecastWeather(lat,lon){
@@ -51,13 +54,22 @@ function getForecastWeather(lat,lon){
     fetch(forecastWeatherUrl)
         .then(function(response){
             response.json().then(function(weather){
-            console.log(weather)
+            // console.log(weather)
             getHourlyData(weather)
 
         })
     })
 }
 
+function getItem(){
+    var storedName = localStorage.getItem('beachName')
+    if (storedName == null){
+        storedName = beach.name[0]
+    }
+    beachName = storedName
+    // console.log(storedName)
+
+}
 function getHourlyData(weatherData){
    
     var dailyData = weatherData.hourly
@@ -112,7 +124,7 @@ function filterUnixFormat(rawDataArray, arrayToPush){
 function displayWeather(weatherTable, day, weatherData, startIndex, endIndex){
     // $('.weather-forecast').text('')
     var hourlyData = weatherData.hourly
-    console.log(hourlyData)
+    // console.log(hourlyData)
     //append type and height header
     var thTemp = $('<th>').text('Temp')
     var thWind = $('<th>').text('Wind')
