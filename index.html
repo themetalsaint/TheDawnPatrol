@@ -8,20 +8,23 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>TheDawnPatrol</title>
 </head>
-<body>
+<body class='body'>
     <header>
-        <nav>
-            <ul>
-                <li class='left title'>Dawn Patrol</li>
-                <li class='right'><a id = 'dropdown1' class='dropdown-trigger btn waves-effect waves-teal' href='#' data-target='dropdown'>Select a Beach</a></li>
-            </ul>
+        <div class='navbar-fixed nav-style'>
+            <nav>
+                <ul>
+                    <li class='left title'>Dawn Patrol</li>
+                    <li class='right'><a id = 'dropdown1' class='dropdown-trigger btn waves-effect waves-teal' href='#' data-target='dropdown'>Select a Beach</a></li>
+                </ul>
+    
+                <ul id='dropdown' class='dropdown-content'>
+                    <li><a id='wrightsville' href="#!">Wrightsville Beach</a></li>
+                    <li><a id='carolina' href="#!">Carolina Beach</a></li>
+                    <li><a id='surfcity' href="#!">Surf City</a></li>
+                </ul>
+            </nav>
 
-            <ul id='dropdown' class='dropdown-content'>
-                <li><a id='wrightsville' href="#!">Wrightsville Beach</a></li>
-                <li><a id='carolina' href="#!">Carolina Beach</a></li>
-                <li><a id='surfcity' href="#!">Surf City</a></li>
-            </ul>
-        </nav>
+        </div>
     
         <!-- <img id='spotImage' src="./assets/images/wrightsville3.jpg" alt="wrightsville"> -->
         <h3 class='beach header-beach'></h3>
