@@ -155,7 +155,8 @@ function displayWeather(weatherTable, day, weatherData, startIndex, endIndex){
         var wind = $('<td>').text(hourlyData[i].wind_speed + ' mph')
         var humid = $('<td>').text(hourlyData[i].humidity + '%')
         var uv = $('<td>').text(`(${hourlyData[i].uvi})`)
-        if(hour.text() == moment().format('h a')){
+        var currentTime = moment.unix(hourlyData[i].dt).format('h a MM/DD')
+        if(currentTime == moment().format('h a MM/DD')){
             hour.text('Now')
         }
         var trData = $('<tr>').append(hour, temp, wind, humid, uv)
