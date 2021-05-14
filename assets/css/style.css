@@ -40,7 +40,8 @@ img{
   height: 600px;
   margin-right: auto;
   margin-left: auto;
-  background-color: lightseagreen;
+  background-color: #235D71;
+  ;
   margin-bottom:15px;  
   border-radius: 10px;
 }
@@ -344,7 +345,7 @@ td,th,table{
 }
 
 #modalBtn{
-  background-color: rgb(9, 177, 228);
+  background-color: lightseagreen;
 }
 
 #modal1 {
@@ -357,6 +358,7 @@ td,th,table{
 footer{
   text-align: center;
   padding: 1px;
-  background-color:rgb(105, 75, 36);
-  color:aquamarine
+  background-color:lightseagreen;
+  color:white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
 }
