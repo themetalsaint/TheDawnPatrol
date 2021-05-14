@@ -15,7 +15,7 @@ $('#wrightsville').on('click', function(event){
     event.preventDefault()
     beachName = beach.name[0]
     getCoordinates(beachName)
-    $('.body').css('background-color','rgb(9, 177, 228)')
+    $('.body').css('background-color','rgb(168, 103, 240)')
     
 })
 $('#carolina').on('click', function(event){
@@ -31,19 +31,19 @@ $('#surfcity').on('click', function(event){
     event.preventDefault()
     beachName = beach.name[1]
     getCoordinates(beachName)
-    $('.body').css('background-color','rgb(18, 112, 34)')
+    $('.body').css('background-color','rgb(64, 4, 130)')
 
 })
 
 if(beachName === 'Wrightsville Beach'){
-    $('.body').css('background-color','rgb(9, 177, 228)')
+    $('.body').css('background-color','rgb(168, 103, 240)')
     
 }
 if(beachName === 'Carolina Beach'){
     $('.body').css('background-color','blueviolet')
 }
 if(beachName === 'Surf City Pier'){
-    $('.body').css('background-color','rgb(18, 112, 34)')
+    $('.body').css('background-color','rgb(64, 4, 130)')
 }
 
 
@@ -155,7 +155,8 @@ function displayWeather(weatherTable, day, weatherData, startIndex, endIndex){
         var wind = $('<td>').text(hourlyData[i].wind_speed + ' mph')
         var humid = $('<td>').text(hourlyData[i].humidity + '%')
         var uv = $('<td>').text(`(${hourlyData[i].uvi})`)
-        if(hour.text() == moment().format('h a')){
+        var currentTime = moment.unix(hourlyData[i].dt).format('h a MM/DD')
+        if(currentTime == moment().format('h a MM/DD')){
             hour.text('Now')
         }
         var trData = $('<tr>').append(hour, temp, wind, humid, uv)
