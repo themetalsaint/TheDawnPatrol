@@ -54,7 +54,6 @@ function getCoordinates(beachInput){
         if(beachInput == beach.name[i]){
             var lat = beach.lat[i]
             var lon = beach.lon[i]
-            // console.log(beach.lat[i])
             getForecastWeather(lat,lon)
         }
     }
@@ -71,7 +70,6 @@ function getForecastWeather(lat,lon){
     fetch(forecastWeatherUrl)
         .then(function(response){
             response.json().then(function(weather){
-            // console.log(weather)
             getHourlyData(weather)
 
         })
@@ -84,7 +82,7 @@ function getItem(){
         storedName = beach.name[0]
     }
     beachName = storedName
-    // console.log(storedName)
+    
 
 }
 function getHourlyData(weatherData){
@@ -119,12 +117,7 @@ function getHourlyData(weatherData){
     displayWeather(weatherTable[1], day[1], weatherData, nextDayIndex, lastDayIndex)
     displayWeather(weatherTable[2], day[2], weatherData, lastDayIndex, endDayIndex)
 
-    // console.log(dailyData)
-    // console.log(dailyDt)
-    // console.log(currentDayIndex)
-    // console.log(nextDayIndex)
-    // console.log(lastDayIndex)
-    // console.log(dailyData[endDayIndex])
+  
     
 }
 
@@ -135,12 +128,12 @@ function filterUnixFormat(rawDataArray, arrayToPush){
     }
     
 
-}//end filterUnixFormat()
+}
 
  //display the current weather info to the page
 function displayWeather(weatherTable, day, weatherData, startIndex, endIndex){
     var hourlyData = weatherData.hourly
-    // console.log(hourlyData)
+   
     //append type and height header
     var thTemp = $('<th>').text('Temp')
     var thWind = $('<th>').text('Wind')
