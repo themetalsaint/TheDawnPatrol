@@ -28,7 +28,6 @@ img{
     flex-wrap: nowrap;
     width: 100%;
     height: 400px;
-    /* margin-bottom: 15px; */
     margin-top: 15px;
     background-color: lightseagreen;
     padding:15px;
@@ -64,7 +63,7 @@ img{
   position: relative;
   top: 50px;
   font-size: 24px;
-  /* text-align: center; */
+  
       
 }
 
@@ -75,7 +74,6 @@ img{
   opacity: 75%;
   position: absolute;
   bottom: 0px;
-  /* left: -50px; */
   right: 750px;
 }
 #waveHeightDisplay {
@@ -115,9 +113,7 @@ select{
     padding: 12px;
   }
   
-  /* #midnightHigh, #midnightLow {
-    
-  } */
+  
 
 #a3amHigh, #a3amLow, #a3am {
   left: 100px;
@@ -181,7 +177,6 @@ nav{
 }
 
 #heightsList .height {
-  /* position: absolute */
   border-top: 3px solid black;
   height: 60px;
   width: 15px;
@@ -196,7 +191,6 @@ nav{
   overflow: visible;
   text-align: right;
 }
-/* tide info styling start here */
 .weather-forecast tr{
   line-height: 0px;
   color:cyan;
@@ -207,7 +201,6 @@ nav{
   color:khaki
 }
 td,th,table{
-  /* padding-left: 12px; */
   text-align: center;
   
   
@@ -238,7 +231,6 @@ td,th,table{
   position: relative;
   width: 335px;
   height: 400px;
-  /* background-color: rgb(14, 145, 123); */
   margin: auto;
   margin-bottom:15px;
   overflow: auto;
@@ -250,7 +242,6 @@ td,th,table{
   height: 400px;
   margin: auto;
   margin-bottom:15px;
-  /* background-color:aquamarine; */
   overflow: auto;
   display: none;
 }
@@ -289,7 +280,6 @@ td,th,table{
     width: 300px;
     height: 112.5px;
     position: absolute;
-    /* top: 150%%; */
     left: 50%;
     margin-left: -150px;
     background-color: lightblue;
@@ -319,7 +309,7 @@ td,th,table{
   }
   #a9pmHigh, #a9pmLow, #a9pm {
     left: 262.5px;
-    /* left: 262.5px; */
+    
   }
   #a12am {
     left: 299px;
