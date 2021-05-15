@@ -110,13 +110,15 @@ function getHourlyData(weatherData){
     var lastDayIndex = dailyData.findIndex(lastDay)
     var endDay = (element) => element === dailyData[(dailyData.length-1)]
     var endDayIndex = dailyData.findIndex(endDay)
-
+    if(lastDayIndex === -1){
+        lastDay =  (element) => element === dailyData[(dailyData.length-1)]
+        lastDayIndex = dailyData.findIndex(lastDay)
+    }
     var weatherTable = ['.today-weather', '.day2-weather', '.day3-weather']
     var day = ['.day1-w', '.day2-w', '.day3-w']
     displayWeather(weatherTable[0], day[0], weatherData, currentDayIndex, nextDayIndex)
     displayWeather(weatherTable[1], day[1], weatherData, nextDayIndex, lastDayIndex)
     displayWeather(weatherTable[2], day[2], weatherData, lastDayIndex, endDayIndex)
-
   
     
 }

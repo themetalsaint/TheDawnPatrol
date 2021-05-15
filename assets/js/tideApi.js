@@ -41,7 +41,6 @@ function callTideApi(bId, beachN){
     fetch(tideApiUrl)
             .then(function(response){
                 response.json().then(function(tideData){
-                // console.log(tideData)
                 $('.beach').text(beachN)
                 getTideInfo(tideData)
                 
@@ -62,7 +61,7 @@ function getItem(){
     }
     defaultBeach = storedId
     defaultBeachName = storedName
-    // console.log(defaultBeachName)
+    
 }
 
 function getTideInfo(tideData){
@@ -128,7 +127,6 @@ function getHourlyTideData(tideData, startDayIndex, endDayIndex, table ,h3){
     var hourlyTideArray = []
     
     filterUnixFormat(hourlyTimeStamp, hourlyTideArray)    
-    // console.log(hourlyTideArray)
     
     appendTideInfo(hourlyTideArray, table, h3)
    
